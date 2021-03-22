@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- vue中 v-model 样式 -->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			您输入的内容将在屏幕上显示:
+			<h4>{{mes}}</h4><br>
+			<input v-model="mes" >
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data(){
+					return{
+						mes:''
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

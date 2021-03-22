@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js" >
+		</script>
+	</head>
+	<body>
+		<center>
+			<div id="app">
+				<h4>第一学期的成绩：{{mes}}</h4><br>
+				<p>您的成绩为：</p>
+				<li v-if='num>=90'>优秀</li>
+				<li v-if='num>=80 && num<90'>良好</li>
+				<li v-if='num>=70 && num<80'>合格</li>
+				<li v-if='num>=60 && num<70'>一般</li>
+				<li v-if='num<60'>不合格</li>
+			</div>
+		</center>
+		<script type="text/javascript">
+			var e=new Vue({
+				el:'#app',
+				data(){
+					return{
+						mes:'欢迎查询',
+						num:'90'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
