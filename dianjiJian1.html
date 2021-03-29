@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+  功能：给初始化数字的值:100
+        然后每点击一次按钮数值减1
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app" align="center">
+			{{Number}}<br>
+			<input type="button" v-on:click="Number--" value="点击按钮" /><br>
+		</div>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data(){
+					return{
+						Number:'100'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

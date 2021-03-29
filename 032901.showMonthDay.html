@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app" align="center">
+			请输入月份：
+			<input v-model="Month" /><br>
+			<span>该月份的天数为：</span>
+			<li v-if="Month==1">31</li>
+			<li v-if="Month==2">28</li>
+			<li v-if="Month==3">31</li>
+			<li v-if="Month==4">30</li>
+			<li v-if="Month==5">31</li>
+			<li v-if="Month==6">30</li>
+			<li v-if="Month==7">31</li>
+			<li v-if="Month==8">31</li>
+			<li v-if="Month==9">30</li>
+			<li v-if="Month==10">31</li>
+			<li v-if="Month==11">30</li>
+			<li v-if="Month==12">31</li>
+		</div>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data(){
+					return{
+						Month:''
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
