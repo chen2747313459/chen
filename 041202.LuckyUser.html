@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 功能：点击按钮，随机抽取幸运用户 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<center>
+		<div id="app">
+			<h2>幸运用户：</h2>
+			<input @click="userNumber=Math.ceil(Math.random()*10)%5+1" type="button" name="" id="" value="随机抽取" />
+			<!-- {{users[userNumber]}} -->
+			<div id="" v-for="user in users">
+				<div id="" v-if="userNumber==user.code">
+					姓名：{{user.userName}}&nbsp;&nbsp;
+					序号：{{user.code}}
+				</div>
+			</div>
+		</div>
+		</center>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',  //el是固定的，不能改成其他字符串
+				data:{
+					userNumber:'',
+					users:
+					[
+						{userName:'李亮',code:'1'},
+						{userName:'王勇',code:'2'},
+						{userName:'钟倩言',code:'3'},
+						{userName:'梁燕燕',code:'4'},
+						{userName:'杨忠名',code:'5'},
+					]
+					
+				}
+			})
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 功能：输入国家的代码，自动跳出该国家名称、首都 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<center>
+		<div id="app">
+			<h2>国家-首都列表：</h2>
+			输入国家代码：<input v-model="CountryCode" type="text" name="" id="" value="" />
+			<div id="" v-for="country in countrys">
+				<div id="" v-if="CountryCode==country.code">
+					国家：{{country.country}} &nbsp;&nbsp;
+					首都：{{country.capital}} &nbsp;&nbsp;
+					国家代码：{{country.code}}
+				</div>
+			</div>
+		</div>
+		</center>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',  //el是固定的，不能改成其他字符串
+				data:{
+					CountryCode:'',
+					countrys:
+					[
+						{country:'中国',capital:'北京',code:'86'},
+						{country:'韩国',capital:'首尔',code:'33'},
+						{country:'日本',capital:'东京',code:'77'},
+						{country:'美国',capital:'华盛顿',code:'1'},
+						{country:'英国',capital:'伦敦',code:'44'},
+					]
+				}
+			})
+	</body>
+</html>
