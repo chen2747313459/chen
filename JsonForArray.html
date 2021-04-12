@@ -21,6 +21,9 @@
 			<!-- 方法4：for循环输出所有字段的值，但不输出字段名 -->
 			<!-- index作为第二个参数，用以标识下标 -->
 			<div id="" v-for="(fruit,index) in fruits">
+				<!-- 输出下标 -->
+				{{index}}.&nbsp;&nbsp;
+				<!-- 输出下标对应的所有数组值 -->
 				{{fruit.name}}
 			</div>
 		</div>
