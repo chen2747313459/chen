@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--功能： JSON类型的数组数据for循环 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<center>
+		<div id="app">
+			<h2>水果列表：</h2>
+			<!-- 方法1：遍历所有fruits数组的字段与值 -->
+			<!-- {{fruits}}  -->
+			<!-- 方法2：查询数组单个下标的值 -->
+			<!-- {{fruits[0].name}} -->
+			<!--方法3： for循环，fruit自定义，fruits是data中的数组名,该数组输出效果是：所有字段名和对应值都属出来 -->
+			<!-- <div id="" v-for="fruit in fruits">
+				{{fruit}}
+			</div> -->
+			<!-- 方法4：for循环输出所有字段的值，但不输出字段名 -->
+			<!-- index作为第二个参数，用以标识下标 -->
+			<div id="" v-for="(fruit,index) in fruits">
+				{{fruit.name}}
+			</div>
+		</div>
+		</center>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',  //el是固定的，不能改成其他字符串
+				data:{
+					fruits:
+					[
+						{name:'芒果'},
+						{name:'苹果'},
+						{name:'香蕉'},
+						{name:'百香果'},
+						{name:'橙子'}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
