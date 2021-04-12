@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--功能:输入几月份可显示该月份有多少天  -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<center>
+		<div id="app">
+			请输入月份：<input v-model="userNumber" type="text" name="" id="" value="" /><br>
+			你输入的是:{{userNumber}}月,有{{month[userNumber-1]}}天
+		</div>
+		</center>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',  //el是固定的，不能改成其他字符串
+				data:{
+					userNumber:'1',
+					month:[31,28,31,30,31,30,31,31,30,31,30,31]
+				}
+			})
+		</script>
+	</body>
+</html>
