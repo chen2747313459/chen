@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- 功能：点击图片-调用方法-显示图片的X轴Y轴坐标 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<image src="img/gif1.gif" @click="zuobiao()" style="width:60px"></image>
+		</div>
+		<script type="text/javascript">
+			let va=new Vue({  
+				el:"#app",  //el也不可以写成其他字符
+				data:{
+				},
+				methods:{
+					zuobiao(){
+						console.log(event.clientX+","+event.clientY);  //该方法是显示图片的X轴Y轴坐标位置
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

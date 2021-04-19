@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 功能：点击按钮-调用方法-1、在控制台显示输出数据-2、用alert弹窗输出数据信息 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="show()"  id="">点击输出信息</button>
+		</div>
+		<script type="text/javascript">
+			let va=new Vue({  
+				el:"#app",  //el也不可以写成其他字符
+				data:{
+				},
+				methods:{
+					show(){
+						console.log("这是在控制台输出语句！");
+						alert("这是弹窗输出信息！");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

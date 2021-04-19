@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- 功能：HTML插值 div中用v-html属性展示script中自定义的属性,可用字符修饰大小，字体来修饰 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div v-html="message"></div>
+		</div>
+		<script type="text/javascript">
+			let va=new Vue({  
+				el:"#app",  //el也不可以写成其他字符
+				data:{
+					message:"<h2>广西科技师范学院</h2> &nbsp;Wellcome to Hello Word!"
+				}
+			})
+		</script>
+	</body>
+</html>
