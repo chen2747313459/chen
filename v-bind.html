@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 功能：属性绑定-指令v-bind -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.italic {font-style:italic}
+	</style>
+	<body>
+		<div id="app" style="margin-left:300px;">
+			<p v-bind:class="className" v-bnd:title="title">危险勿触碰</p>
+			<button v-bind:disabled="10+10===20">点击有奖</button>   <!--disabled在这里的作用是：符合条件时，该按钮禁用状态-->
+			<!--判断，如果10+10===x,x的值符合算式的值，则输入框显示“请输入”，否则显示“请录入”-->
+			<input v-bind:type="'text'" v-bind:placeholder="true ? '请输入' : '请录入'"> 
+		</div>
+		<script type="text/javascript">
+			let vm=new Vue({
+				el:'#app',
+				data(){
+					return{
+						className:'italic',
+						title:'危险勿触碰'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
