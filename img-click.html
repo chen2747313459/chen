@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<div id="app">
-			<image src="img/gif1.gif" @click="zuobiao()" style="width:60px"></image>
+			<center>
+			<image src="img/gif1.gif" @click="zuobiao()" style="width:200px"></image>
+		</center>
 		</div>
 		<script type="text/javascript">
 			let va=new Vue({  
@@ -17,7 +19,11 @@
 				},
 				methods:{
 					zuobiao(){
-						console.log(event.clientX+","+event.clientY);  //该方法是显示图片的X轴Y轴坐标位置
+						// console.log(event.clientX+","+event.clientY);  //该方法是点击图片在控制台显示图片的X轴Y轴坐标位置
+						//判断当点击图片X轴范围在[308,323],Y轴在[42,84]区间时，则弹出提示信息：恭喜您验证成功
+						if(event.clientX>308 && event.clientX<323 && event.clientY>42 && event.clientY<84){
+							alert("恭喜您验证成功！");
+						}
 					}
 				}
 			})
