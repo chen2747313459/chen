@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 功能：找出两个有差别的图片，当点击是不同的点时，则点击次数自增1，同时也进行
+计分，当计分超过10分时，则游戏通过 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<br><br>
+			<center>
+				<h4>请找出右边图片中不同与左边图片的地方，并点击：</h4>
+				<img src="img/haimianbaobao.jpg" @click="show()" style="width: 300px;height: 250px;"><br>
+			    已点击次数：{{number}}<br>
+				找到的地方有：{{count}} 处<br>
+				分数：{{score}}
+			</center>
+		</div>
+		<script type="text/javascript">
+			let v = new Vue({
+				el:"#app",
+				data:{
+					number:0,
+					count:0,
+					score:0
+				},
+				methods:{
+					show(){
+						v.number++;
+						// console.log(event.clientX+","+event.clientY);  //该方法是点击图片在控制台显示图片的X轴Y轴坐标位置
+						if(event.clientX>388 && event.clientX<402 && event.clientY>145 && event.clientY<158){
+							v.count++;
+							v.score=v.score+20;
+						}
+						if(event.clientX>355 && event.clientX<378 && event.clientY>155 && event.clientY<184){
+							v.count++;
+							v.score=v.score+20;
+						}
+						if(event.clientX>380 && event.clientX<393 && event.clientY>180 && event.clientY<203){
+							v.count++;
+							v.score=v.score+20;
+						}
+						if(event.clientX>271 && event.clientX<285 && event.clientY>289 && event.clientY<318){
+							v.count++;
+							v.score=v.score+20;
+						}
+						if(v.score>80){
+							alert("恭喜您游戏通过！");
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
