@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 功能：点击触发输入框 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <input @Keydown="show()" type="" name="" id="" value="" /> -->
+			<input @Keyup="show()" type="" name="" id="" value="" />
+		</div>
+		<script type="text/javascript">
+			let v= new Vue({
+				el:"#app",
+				data:{
+				},
+				methods:{
+					show(){
+						alert("你已经触发！");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

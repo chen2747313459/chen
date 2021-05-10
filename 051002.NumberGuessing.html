@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 功能：猜数字。输入一个数字，回车并提示是否已经猜对 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<center>
+		<div id="app">
+			<h4>正确答案：{{daan}}</h4>
+			<input v-model="number" @Keyup.enter="show()" type="" name="" id="" value="" />
+			您的答案：{{number}}
+			<!-- <li v-if="number==daan">我真是个小天才！真棒！都崇拜我自己了！</li>
+			<li v-if="number!='' && number!=daan">您的运气有点差哦！</li> -->
+		</div>
+		</center>
+		<script type="text/javascript">
+			let v = new Vue({
+				el:'#app',
+				data(){
+					return {
+						daan:Math.floor(Math.random()*10),
+						number:''
+					}
+				},
+				methods:{
+					show(){
+						if(v.number==v.daan){  //判断输入的数值跟随机产生的答案是否一致
+							alert("猜对了，我真是个小天才！真棒！都崇拜我自己了!");
+						}else{
+							alert("猜错了，您的运气有点差哦！");
+						}
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

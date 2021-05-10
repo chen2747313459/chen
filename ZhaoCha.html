@@ -29,26 +29,61 @@
 				methods:{
 					show(){
 						v.number++;
-						// console.log(event.clientX+","+event.clientY);  //该方法是点击图片在控制台显示图片的X轴Y轴坐标位置
-						if(event.clientX>388 && event.clientX<402 && event.clientY>145 && event.clientY<158){
-							v.count++;
-							v.score=v.score+20;
+						var i=0;
+						/* console.log(event.clientX+","+event.clientY);  //该方法是点击图片在控制台显示图片的X轴Y轴坐标位置 */
+						// for(i=0;i<1;i++){
+							//黄花
+							if(event.clientX>803 && event.clientX<814 && event.clientY>145 && event.clientY<160){
+								if(v.count<=0){
+									v.count++;
+									v.score=v.score+20;
+									if(v.score>80){
+										alert("恭喜您游戏通过！");
+									}
+								}else{
+									alert("点击重复，不计分！");
+								}
+							}
+						// }
+						//黄手1
+						if(event.clientX>769 && event.clientX<790 && event.clientY>155 && event.clientY<184){
+							if(v.count<=1 ){
+								v.count++;
+								v.score=v.score+20;
+								if(v.score>80){
+									alert("恭喜您游戏通过！");
+								}
+							}else{
+								alert("点击重复，不计分！");
+							}
 						}
-						if(event.clientX>355 && event.clientX<378 && event.clientY>155 && event.clientY<184){
-							v.count++;
-							v.score=v.score+20;
+						//黄手2
+						if(event.clientX>793 && event.clientX<807 && event.clientY>180 && event.clientY<207){
+							if(v.count<=2){
+								v.count++;
+								v.score=v.score+20;
+								if(v.score>80){
+									alert("恭喜您游戏通过！");
+								}
+							}else{
+								alert("点击重复，不计分！");
+							}
 						}
-						if(event.clientX>380 && event.clientX<393 && event.clientY>180 && event.clientY<203){
-							v.count++;
-							v.score=v.score+20;
+						//红色部分
+						if(event.clientX>684 && event.clientX<696 && event.clientY>289 && event.clientY<318){
+							if(v.count<=3){
+								v.count++;
+								v.score=v.score+20;
+								if(v.score>80){
+									alert("恭喜您游戏通过！");
+								}
+							}else{
+								alert("点击重复，不计分！");
+							}
 						}
-						if(event.clientX>271 && event.clientX<285 && event.clientY>289 && event.clientY<318){
-							v.count++;
-							v.score=v.score+20;
-						}
-						if(v.score>80){
-							alert("恭喜您游戏通过！");
-						}
+						// if(v.score>80){
+						// 	alert("恭喜您游戏通过！");
+						// }
 					}
 				}
 			})
