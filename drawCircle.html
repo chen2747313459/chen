@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 功能：绘画圆型图，方法1、给定圆半径； 方法2、在输入框输入半径，然后绘画圆图 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="MyContent" width="150" height="120"></canvas>
+		<!-- <input type="button" name="" id="" value="点击" /> -->
+		<div id="app">
+			圆的半径：{{banjng}}<br>
+			<input v-model="banjng" type="text" name="" id="" value="" />
+			<input @click="show()" type="button" name="" id="" value="点击绘画圆弧" />
+		</div>
+		<script type="text/javascript">
+			let v= new Vue({
+				el:"#app",
+				data(){
+					return{
+						banjng:''  //半径变量
+					}
+				},
+				methods:{
+					show(){
+						let canvas = document.getElementById("MyContent");
+						let context = canvas.getContext("2d");
+						context.beginPath();
+						// context.arc(50,50,30,0,2*Math.PI);  //1、 绘制圆的X:50、Y:50 坐标、圆的半径:30、结束角度:0、及全圆:2*Math.PI 或 半圆:1*Math.PI  这里的变量已经写死的
+						context.arc(50,50,v.banjng,0,2*Math.PI);  //2、可在输入框输入圆的半径 v.banjng
+						context.stroke();
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
