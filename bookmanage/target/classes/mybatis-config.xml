@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!--配置日志实现 -->
+  <settings>
+   	<!--开启驼峰命名规则-->
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+  </settings>
+   <!--给实体类取别名-->
+   <typeAliases>
+   	  <!--批量取别名 默认为实体类首字母小写 -->
+   	  <package name="com.ks.entity"/>
+   </typeAliases>
+</configuration>

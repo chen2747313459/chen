@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>添加图书</title>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js" th:src="@{/myjs/manyjs.js}"></script>
+<script type="text/javascript">
+$(function(){ //jquery初始化-简写方式 
+	//btu点击事件（）
+	$("#btn") .click(function() {
+		//返回到上一页
+		//history.go(-1);
+		history.back();
+	});
+ });
+</script>
+</head>
+<body>
+  <div align="center">
+    <form action="#" th:action="@{/addBook}">
+  	<table border="1" cellpadding="0" cellspacing="0" align="center" class="table table-hover table-striped table-sm">
+  		<tr style="background-color: yellow;">
+	        <th colspan="2" width="60%" height="60%"><h2>添加图书</h2></th>
+	    </tr>
+	    <tr>
+	    	<td>书名<span style="color:red;font-weight: bold;">(*)</span></td>
+	    	<td><input name="Name" id="Name" required="" type="text" /><span id="msgN" style="color:red;"></span></td>
+	    </tr>
+	     <tr>
+	    	<td>作者<span style="color:red;font-weight: bold;">(*)</span></td>
+	    	<td><input name="Author" id="Author" required="" type="text"/><span id="msgA" style="color:red;"></span></td>
+	    </tr>
+	     <tr>
+	    	<td>出版社<span style="color:red;font-weight: bold;">(*)</span></td>
+	    	<td><input name="publish" id="publish" required="" type="text"/><span id="msgP" style="color:red;"></span></td>
+	    </tr>
+	   <tr>
+	    	<td>出版日期<span style="color:red;font-weight: bold;">(*)</span></td>
+	    	<td><input name="publishdate" id="publishdate" required="" type="date" />(yyyy-MM-dd)<span id="msgPD" style="color:red;"></span></td>
+	    </tr> 
+	     <tr>
+	    	<td>页数</td>
+	    	<td><input name="Page" id="Page" required="" type="text" /></td>
+	    </tr>
+	     <tr>
+	    	<td>价格</td>
+	    	<td><input name="Price" id="Price" required="" type="text" /></td>
+	    </tr> 
+	     <tr>
+	    	<td>内容摘要</td>
+	    	<td>
+	    		<!-- <input name="Content" id="Content" required="" type="text" /> -->
+	    		<textarea name="Content" id="Content" required="" type="text"></textarea>
+	    	</td>
+	    </tr>
+	    <tr>
+	      <th colspan="2" >
+	        <input type="submit" class="btn btn-info" value="添加" onclick="creatNewBook()"/>
+	        <input type="reset" class="btn btn-info" value="返回" id="btn" style="color: blue; background-color: pink;font-family: 方正舒体;font-size: 20px" />
+	      </th>
+	    </tr>
+  	</table>
+  	</form>
+  </div>
+</body>
+</html>

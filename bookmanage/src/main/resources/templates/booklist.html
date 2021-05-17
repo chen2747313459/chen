@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>图书列表</title>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript">
+$(function() {
+	//隔行变色(绿色)，及设置字体类型、大小
+	$(".base:even").css("background-color","plum").css("font-family","华文新魏").css("font-size","18px");
+});
+</script>
+<!-- <style type="text/css">
+  .wh{
+     width: 20%;
+     height: 30%
+  }
+</style> -->
+</head>
+<body>
+  <div align="center">
+	  <!-- <span th:text=${session.usertype}></span> -->
+	  <h2><span th:if=${session.usertype}==1>图书系统管理员欢迎您</span></h2>
+	  <h2><span th:if=${session.usertype}==2>普通用户欢迎您</span></h2>
+	  <form action="#" th:action="@{/bookList}" method="get">
+		  <label>
+		              姓名:<input type="text" name="Name" th:value="${Name}"/>&nbsp;
+		               出版社:<input type="text" name="publish" th:value="${publish}"/>&nbsp;
+		  </label>
+		  <button type="submit" class="btn btn-success btn-sm" value="搜索">搜索</button>
+	 </form><br>
+	  <table border="1" cellpadding="0" cellspacing="0" align="center" class="table table-hover table-striped table-sm">
+	  <thead>
+	    <tr style="background-color: yellow;">
+	        <th colspan="8" width="60%" height="60%"><h2>图书详细信息列表</h2></th>
+	    </tr>
+		<tr class="wh">
+			<th >书名</th>
+			<th >作者</th>
+			<th >出版社</th>
+			<th >出版日期</th>
+			<th >页数</th>
+			<th >价格</th>
+			<th >内容摘要</th>
+			<th >操作</th>
+		</tr>
+		<tr th:each="book:${blist}" class="base" style="width: 20%;height: 20%;" align="center">
+			<td th:text="${book.Name}" >java</td>
+			<td th:text="${book.Author}" >tom</td>
+			<td th:text="${book.publish}" >sss</td>
+			<td th:text="${#dates.format(book.publishdate,'yyyy-MM-dd')}" >2222</td>
+			<td th:text="${book.Page}" >22</td>
+			<td th:text="${book.Price}" >29</td>
+			<td th:text="${book.Content}" >dafgg</td>
+			<td >
+			   <a class="btn btn-info" href="#" th:href="@{/toUpdateBook/}+${book.id}">修改</a>
+			   <a class="btn btn-info" href="#" th:href="@{/deletelBook/}+${book.id}" >删除</a>
+			</td>
+		</tr>
+		<tr class="wh" style="width: 20%;height: 20%;">
+		  <td colspan="8">
+		   <a class="btn btn-info"  href="#" th:href="@{/toAddBook}" >添加</a>
+		  </td>
+		</tr>
+	</thead>
+	</table>
+	
+	<!-- 分页查询显示当前页数及上下页等 -->
+	<p>
+	   <a href="#" th:href="@{/bookList(pno=${page.navigateFirstPage},Name=${Name},publish=${publish})}">首页</a>
+	   <a href="#" th:href="@{/bookList(pno=${page.nextPage},Name=${Name},publish=${publish})}">下一页</a>
+	   <a href="#" th:href="@{/bookList(pno=${page.prePage},Name=${Name},publish=${publish})}">上一页</a>
+	   <a href="#" th:href="@{/bookList(pno=${page.navigateLastPage},Name=${Name},publish=${publish})}">末页</a>
+	   共<span th:text="${page.total}"></span>条数据&nbsp;共<span th:text="${page.pages}"></span>页/第<span th:text="${page.pageNum}"></span>页
+	</p> 
+	<span th:text="${msg}"></span>
+  </div>
+</body>
+</html>

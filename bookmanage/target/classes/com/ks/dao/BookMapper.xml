@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+<!-- 映射文件 -->
+<mapper namespace="com.ks.dao.BookMapper">
+<!-- 多条件模糊查询所有并分页（书名、出版社）来查询-->
+     <select id="selectBookByMany" resultType="book" parameterType="book">
+       select * from book
+       <trim prefix="where" prefixOverrides="and | or">
+            <if test="Name!=null and Name!=''">
+                and Name like concat('%',#{Name},'%')
+            </if>
+            <if test="publish!=null and publish!=''">
+            	and publish like concat('%',#{publish},'%')
+                <!-- and publish =#{publish} -->
+            </if>
+         </trim>  
+     </select>
+
+</mapper>
